@@ -1,6 +1,6 @@
 ﻿namespace OGI_HR_Clanovi
 {
-    partial class Form1
+    partial class FormMembers
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,26 @@
             this.tbcMembers = new System.Windows.Forms.TabControl();
             this.tbpForm = new System.Windows.Forms.TabPage();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.dtpDatePaid = new System.Windows.Forms.DateTimePicker();
+            this.lblDatePaid = new System.Windows.Forms.Label();
+            this.pnlMemberOfOtherOrganizations = new System.Windows.Forms.Panel();
+            this.rbtnOrganizationNo = new System.Windows.Forms.RadioButton();
+            this.rbtnOrganizationYes = new System.Windows.Forms.RadioButton();
+            this.pnlOwnEquipment = new System.Windows.Forms.Panel();
+            this.rbtnEquipmentNo = new System.Windows.Forms.RadioButton();
+            this.rbtnEquipmentYes = new System.Windows.Forms.RadioButton();
+            this.pnlMembershipType = new System.Windows.Forms.Panel();
+            this.rbtnHonorary = new System.Windows.Forms.RadioButton();
+            this.rbtnActive = new System.Windows.Forms.RadioButton();
+            this.rbtnJoined = new System.Windows.Forms.RadioButton();
+            this.lblMembershipType = new System.Windows.Forms.Label();
             this.rtbxBiography = new System.Windows.Forms.RichTextBox();
             this.lblBiography = new System.Windows.Forms.Label();
             this.tbxMusicCategory = new System.Windows.Forms.TextBox();
             this.lblMusicCategory = new System.Windows.Forms.Label();
-            this.gbxEquipmentYesNo = new System.Windows.Forms.GroupBox();
-            this.rbtnEquipmentNo = new System.Windows.Forms.RadioButton();
-            this.rbtnEquipmentYes = new System.Windows.Forms.RadioButton();
             this.lblOwnEquipment = new System.Windows.Forms.Label();
             this.rtbxListOrganizations = new System.Windows.Forms.RichTextBox();
             this.lblListOrganizations = new System.Windows.Forms.Label();
-            this.gbxOrganizationYesNo = new System.Windows.Forms.GroupBox();
-            this.rbtnOrganizationNo = new System.Windows.Forms.RadioButton();
-            this.rbtnOrganizationYes = new System.Windows.Forms.RadioButton();
             this.lblOtherOrganizations = new System.Windows.Forms.Label();
             this.tbxPublisher = new System.Windows.Forms.TextBox();
             this.lblPublisher = new System.Windows.Forms.Label();
@@ -55,8 +62,8 @@
             this.lblBandName = new System.Windows.Forms.Label();
             this.tbxAdditionalSpecialty = new System.Windows.Forms.TextBox();
             this.lblAdditionalSpecialty = new System.Windows.Forms.Label();
-            this.tbxPrimarySpecialty = new System.Windows.Forms.TextBox();
-            this.lblPrimarySpecialty = new System.Windows.Forms.Label();
+            this.tbxBasicSpecialty = new System.Windows.Forms.TextBox();
+            this.lblBasicSpecialty = new System.Windows.Forms.Label();
             this.lblMusicActivity = new System.Windows.Forms.Label();
             this.gpbActivity = new System.Windows.Forms.GroupBox();
             this.rbtnSecondary = new System.Windows.Forms.RadioButton();
@@ -77,8 +84,8 @@
             this.lblAddressOfResidence = new System.Windows.Forms.Label();
             this.tbxDocumentID = new System.Windows.Forms.TextBox();
             this.lblDocumentID = new System.Windows.Forms.Label();
-            this.tbxOib = new System.Windows.Forms.TextBox();
-            this.lblOib = new System.Windows.Forms.Label();
+            this.tbxPersonalNumber = new System.Windows.Forms.TextBox();
+            this.lblPersonalNumber = new System.Windows.Forms.Label();
             this.tbxMemberNumber = new System.Windows.Forms.TextBox();
             this.lblMemberNumber = new System.Windows.Forms.Label();
             this.cbxGender = new System.Windows.Forms.ComboBox();
@@ -94,19 +101,51 @@
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblDOB = new System.Windows.Forms.Label();
             this.gpbControl = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnShowTable = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbpMembersTable = new System.Windows.Forms.TabPage();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
+            this.dgvtxtMemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtDOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtPOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtNationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtPersonalNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtDocumentIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtAddressOfResidence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtEMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtWebPage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMembershipType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtDatePaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtProfession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMusicProfession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMusicActivityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtBasicSpecialty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtAdditionalSpecialty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtBandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtStageName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtManagerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtPublisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMemberOfOtherOrganizations = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtOtherOrganizations = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtOwnEquipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtMusicCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtBiography = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxMembersControl = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddNewMember = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tbcMembers.SuspendLayout();
             this.tbpForm.SuspendLayout();
             this.pnlForm.SuspendLayout();
-            this.gbxEquipmentYesNo.SuspendLayout();
-            this.gbxOrganizationYesNo.SuspendLayout();
+            this.pnlMemberOfOtherOrganizations.SuspendLayout();
+            this.pnlOwnEquipment.SuspendLayout();
+            this.pnlMembershipType.SuspendLayout();
             this.gpbActivity.SuspendLayout();
             this.gpbControl.SuspendLayout();
             this.tbpMembersTable.SuspendLayout();
@@ -119,22 +158,26 @@
             this.tbcMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcMembers.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tbcMembers.Controls.Add(this.tbpForm);
             this.tbcMembers.Controls.Add(this.tbpMembersTable);
+            this.tbcMembers.ItemSize = new System.Drawing.Size(0, 1);
             this.tbcMembers.Location = new System.Drawing.Point(2, 3);
             this.tbcMembers.Name = "tbcMembers";
             this.tbcMembers.SelectedIndex = 0;
             this.tbcMembers.Size = new System.Drawing.Size(1007, 458);
+            this.tbcMembers.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tbcMembers.TabIndex = 0;
+            this.tbcMembers.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbcMembers_MouseClick);
             // 
             // tbpForm
             // 
             this.tbpForm.Controls.Add(this.pnlForm);
             this.tbpForm.Controls.Add(this.gpbControl);
-            this.tbpForm.Location = new System.Drawing.Point(4, 22);
+            this.tbpForm.Location = new System.Drawing.Point(4, 5);
             this.tbpForm.Name = "tbpForm";
             this.tbpForm.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpForm.Size = new System.Drawing.Size(999, 432);
+            this.tbpForm.Size = new System.Drawing.Size(999, 449);
             this.tbpForm.TabIndex = 0;
             this.tbpForm.Text = "Podaci o članu";
             this.tbpForm.UseVisualStyleBackColor = true;
@@ -143,15 +186,19 @@
             // 
             this.pnlForm.AutoScroll = true;
             this.pnlForm.BackColor = System.Drawing.Color.LightGray;
+            this.pnlForm.Controls.Add(this.dtpDatePaid);
+            this.pnlForm.Controls.Add(this.lblDatePaid);
+            this.pnlForm.Controls.Add(this.pnlMemberOfOtherOrganizations);
+            this.pnlForm.Controls.Add(this.pnlOwnEquipment);
+            this.pnlForm.Controls.Add(this.pnlMembershipType);
+            this.pnlForm.Controls.Add(this.lblMembershipType);
             this.pnlForm.Controls.Add(this.rtbxBiography);
             this.pnlForm.Controls.Add(this.lblBiography);
             this.pnlForm.Controls.Add(this.tbxMusicCategory);
             this.pnlForm.Controls.Add(this.lblMusicCategory);
-            this.pnlForm.Controls.Add(this.gbxEquipmentYesNo);
             this.pnlForm.Controls.Add(this.lblOwnEquipment);
             this.pnlForm.Controls.Add(this.rtbxListOrganizations);
             this.pnlForm.Controls.Add(this.lblListOrganizations);
-            this.pnlForm.Controls.Add(this.gbxOrganizationYesNo);
             this.pnlForm.Controls.Add(this.lblOtherOrganizations);
             this.pnlForm.Controls.Add(this.tbxPublisher);
             this.pnlForm.Controls.Add(this.lblPublisher);
@@ -163,8 +210,8 @@
             this.pnlForm.Controls.Add(this.lblBandName);
             this.pnlForm.Controls.Add(this.tbxAdditionalSpecialty);
             this.pnlForm.Controls.Add(this.lblAdditionalSpecialty);
-            this.pnlForm.Controls.Add(this.tbxPrimarySpecialty);
-            this.pnlForm.Controls.Add(this.lblPrimarySpecialty);
+            this.pnlForm.Controls.Add(this.tbxBasicSpecialty);
+            this.pnlForm.Controls.Add(this.lblBasicSpecialty);
             this.pnlForm.Controls.Add(this.lblMusicActivity);
             this.pnlForm.Controls.Add(this.gpbActivity);
             this.pnlForm.Controls.Add(this.tbxMusicProfession);
@@ -183,8 +230,8 @@
             this.pnlForm.Controls.Add(this.lblAddressOfResidence);
             this.pnlForm.Controls.Add(this.tbxDocumentID);
             this.pnlForm.Controls.Add(this.lblDocumentID);
-            this.pnlForm.Controls.Add(this.tbxOib);
-            this.pnlForm.Controls.Add(this.lblOib);
+            this.pnlForm.Controls.Add(this.tbxPersonalNumber);
+            this.pnlForm.Controls.Add(this.lblPersonalNumber);
             this.pnlForm.Controls.Add(this.tbxMemberNumber);
             this.pnlForm.Controls.Add(this.lblMemberNumber);
             this.pnlForm.Controls.Add(this.cbxGender);
@@ -203,14 +250,154 @@
             this.pnlForm.Location = new System.Drawing.Point(3, 3);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlForm.Size = new System.Drawing.Size(993, 381);
+            this.pnlForm.Size = new System.Drawing.Size(993, 398);
             this.pnlForm.TabIndex = 1;
+            // 
+            // dtpDatePaid
+            // 
+            this.dtpDatePaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDatePaid.Location = new System.Drawing.Point(683, 1073);
+            this.dtpDatePaid.Name = "dtpDatePaid";
+            this.dtpDatePaid.Size = new System.Drawing.Size(200, 30);
+            this.dtpDatePaid.TabIndex = 90;
+            // 
+            // lblDatePaid
+            // 
+            this.lblDatePaid.AutoSize = true;
+            this.lblDatePaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatePaid.Location = new System.Drawing.Point(446, 1073);
+            this.lblDatePaid.Name = "lblDatePaid";
+            this.lblDatePaid.Size = new System.Drawing.Size(231, 25);
+            this.lblDatePaid.TabIndex = 89;
+            this.lblDatePaid.Text = "Datum plaćanja članarine";
+            // 
+            // pnlMemberOfOtherOrganizations
+            // 
+            this.pnlMemberOfOtherOrganizations.Controls.Add(this.rbtnOrganizationNo);
+            this.pnlMemberOfOtherOrganizations.Controls.Add(this.rbtnOrganizationYes);
+            this.pnlMemberOfOtherOrganizations.Location = new System.Drawing.Point(354, 609);
+            this.pnlMemberOfOtherOrganizations.Name = "pnlMemberOfOtherOrganizations";
+            this.pnlMemberOfOtherOrganizations.Size = new System.Drawing.Size(111, 42);
+            this.pnlMemberOfOtherOrganizations.TabIndex = 88;
+            // 
+            // rbtnOrganizationNo
+            // 
+            this.rbtnOrganizationNo.AutoSize = true;
+            this.rbtnOrganizationNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnOrganizationNo.Location = new System.Drawing.Point(57, 8);
+            this.rbtnOrganizationNo.Name = "rbtnOrganizationNo";
+            this.rbtnOrganizationNo.Size = new System.Drawing.Size(47, 24);
+            this.rbtnOrganizationNo.TabIndex = 1;
+            this.rbtnOrganizationNo.Text = "Ne";
+            this.rbtnOrganizationNo.UseVisualStyleBackColor = true;
+            this.rbtnOrganizationNo.CheckedChanged += new System.EventHandler(this.rbtnOrganizationNo_CheckedChanged);
+            // 
+            // rbtnOrganizationYes
+            // 
+            this.rbtnOrganizationYes.AutoSize = true;
+            this.rbtnOrganizationYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnOrganizationYes.Location = new System.Drawing.Point(3, 8);
+            this.rbtnOrganizationYes.Name = "rbtnOrganizationYes";
+            this.rbtnOrganizationYes.Size = new System.Drawing.Size(48, 24);
+            this.rbtnOrganizationYes.TabIndex = 0;
+            this.rbtnOrganizationYes.Text = "Da";
+            this.rbtnOrganizationYes.UseVisualStyleBackColor = true;
+            this.rbtnOrganizationYes.CheckedChanged += new System.EventHandler(this.rbtnOrganizationYes_CheckedChanged);
+            // 
+            // pnlOwnEquipment
+            // 
+            this.pnlOwnEquipment.Controls.Add(this.rbtnEquipmentNo);
+            this.pnlOwnEquipment.Controls.Add(this.rbtnEquipmentYes);
+            this.pnlOwnEquipment.Location = new System.Drawing.Point(405, 765);
+            this.pnlOwnEquipment.Name = "pnlOwnEquipment";
+            this.pnlOwnEquipment.Size = new System.Drawing.Size(116, 46);
+            this.pnlOwnEquipment.TabIndex = 87;
+            // 
+            // rbtnEquipmentNo
+            // 
+            this.rbtnEquipmentNo.AutoSize = true;
+            this.rbtnEquipmentNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnEquipmentNo.Location = new System.Drawing.Point(57, 12);
+            this.rbtnEquipmentNo.Name = "rbtnEquipmentNo";
+            this.rbtnEquipmentNo.Size = new System.Drawing.Size(47, 24);
+            this.rbtnEquipmentNo.TabIndex = 1;
+            this.rbtnEquipmentNo.TabStop = true;
+            this.rbtnEquipmentNo.Text = "Ne";
+            this.rbtnEquipmentNo.UseVisualStyleBackColor = true;
+            // 
+            // rbtnEquipmentYes
+            // 
+            this.rbtnEquipmentYes.AutoSize = true;
+            this.rbtnEquipmentYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnEquipmentYes.Location = new System.Drawing.Point(3, 11);
+            this.rbtnEquipmentYes.Name = "rbtnEquipmentYes";
+            this.rbtnEquipmentYes.Size = new System.Drawing.Size(48, 24);
+            this.rbtnEquipmentYes.TabIndex = 0;
+            this.rbtnEquipmentYes.TabStop = true;
+            this.rbtnEquipmentYes.Text = "Da";
+            this.rbtnEquipmentYes.UseVisualStyleBackColor = true;
+            // 
+            // pnlMembershipType
+            // 
+            this.pnlMembershipType.Controls.Add(this.rbtnHonorary);
+            this.pnlMembershipType.Controls.Add(this.rbtnActive);
+            this.pnlMembershipType.Controls.Add(this.rbtnJoined);
+            this.pnlMembershipType.Location = new System.Drawing.Point(131, 1062);
+            this.pnlMembershipType.Name = "pnlMembershipType";
+            this.pnlMembershipType.Size = new System.Drawing.Size(297, 61);
+            this.pnlMembershipType.TabIndex = 86;
+            // 
+            // rbtnHonorary
+            // 
+            this.rbtnHonorary.AutoSize = true;
+            this.rbtnHonorary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnHonorary.Location = new System.Drawing.Point(201, 13);
+            this.rbtnHonorary.Name = "rbtnHonorary";
+            this.rbtnHonorary.Size = new System.Drawing.Size(89, 24);
+            this.rbtnHonorary.TabIndex = 2;
+            this.rbtnHonorary.TabStop = true;
+            this.rbtnHonorary.Text = "Počasno";
+            this.rbtnHonorary.UseVisualStyleBackColor = true;
+            // 
+            // rbtnActive
+            // 
+            this.rbtnActive.AutoSize = true;
+            this.rbtnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnActive.Location = new System.Drawing.Point(7, 13);
+            this.rbtnActive.Name = "rbtnActive";
+            this.rbtnActive.Size = new System.Drawing.Size(79, 24);
+            this.rbtnActive.TabIndex = 0;
+            this.rbtnActive.TabStop = true;
+            this.rbtnActive.Text = "Aktivno";
+            this.rbtnActive.UseVisualStyleBackColor = true;
+            // 
+            // rbtnJoined
+            // 
+            this.rbtnJoined.AutoSize = true;
+            this.rbtnJoined.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnJoined.Location = new System.Drawing.Point(92, 13);
+            this.rbtnJoined.Name = "rbtnJoined";
+            this.rbtnJoined.Size = new System.Drawing.Size(103, 24);
+            this.rbtnJoined.TabIndex = 1;
+            this.rbtnJoined.TabStop = true;
+            this.rbtnJoined.Text = "Pridruženo";
+            this.rbtnJoined.UseVisualStyleBackColor = true;
+            // 
+            // lblMembershipType
+            // 
+            this.lblMembershipType.AutoSize = true;
+            this.lblMembershipType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMembershipType.Location = new System.Drawing.Point(8, 1073);
+            this.lblMembershipType.Name = "lblMembershipType";
+            this.lblMembershipType.Size = new System.Drawing.Size(117, 25);
+            this.lblMembershipType.TabIndex = 85;
+            this.lblMembershipType.Text = "Tip članstva";
             // 
             // rtbxBiography
             // 
+            this.rtbxBiography.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbxBiography.Location = new System.Drawing.Point(101, 873);
             this.rtbxBiography.Name = "rtbxBiography";
-            this.rtbxBiography.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.rtbxBiography.Size = new System.Drawing.Size(859, 183);
             this.rtbxBiography.TabIndex = 83;
             this.rtbxBiography.Text = "";
@@ -228,7 +415,7 @@
             // tbxMusicCategory
             // 
             this.tbxMusicCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMusicCategory.Location = new System.Drawing.Point(404, 821);
+            this.tbxMusicCategory.Location = new System.Drawing.Point(404, 826);
             this.tbxMusicCategory.Name = "tbxMusicCategory";
             this.tbxMusicCategory.Size = new System.Drawing.Size(556, 30);
             this.tbxMusicCategory.TabIndex = 81;
@@ -243,40 +430,6 @@
             this.lblMusicCategory.TabIndex = 80;
             this.lblMusicCategory.Text = "Navedite kategorije glazbe u kojima djelujete";
             // 
-            // gbxEquipmentYesNo
-            // 
-            this.gbxEquipmentYesNo.Controls.Add(this.rbtnEquipmentNo);
-            this.gbxEquipmentYesNo.Controls.Add(this.rbtnEquipmentYes);
-            this.gbxEquipmentYesNo.Location = new System.Drawing.Point(408, 753);
-            this.gbxEquipmentYesNo.Name = "gbxEquipmentYesNo";
-            this.gbxEquipmentYesNo.Size = new System.Drawing.Size(122, 53);
-            this.gbxEquipmentYesNo.TabIndex = 79;
-            this.gbxEquipmentYesNo.TabStop = false;
-            // 
-            // rbtnEquipmentNo
-            // 
-            this.rbtnEquipmentNo.AutoSize = true;
-            this.rbtnEquipmentNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnEquipmentNo.Location = new System.Drawing.Point(68, 13);
-            this.rbtnEquipmentNo.Name = "rbtnEquipmentNo";
-            this.rbtnEquipmentNo.Size = new System.Drawing.Size(47, 24);
-            this.rbtnEquipmentNo.TabIndex = 1;
-            this.rbtnEquipmentNo.TabStop = true;
-            this.rbtnEquipmentNo.Text = "Ne";
-            this.rbtnEquipmentNo.UseVisualStyleBackColor = true;
-            // 
-            // rbtnEquipmentYes
-            // 
-            this.rbtnEquipmentYes.AutoSize = true;
-            this.rbtnEquipmentYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnEquipmentYes.Location = new System.Drawing.Point(8, 14);
-            this.rbtnEquipmentYes.Name = "rbtnEquipmentYes";
-            this.rbtnEquipmentYes.Size = new System.Drawing.Size(48, 24);
-            this.rbtnEquipmentYes.TabIndex = 0;
-            this.rbtnEquipmentYes.TabStop = true;
-            this.rbtnEquipmentYes.Text = "Da";
-            this.rbtnEquipmentYes.UseVisualStyleBackColor = true;
-            // 
             // lblOwnEquipment
             // 
             this.lblOwnEquipment.AutoSize = true;
@@ -289,9 +442,9 @@
             // 
             // rtbxListOrganizations
             // 
+            this.rtbxListOrganizations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbxListOrganizations.Location = new System.Drawing.Point(354, 661);
             this.rtbxListOrganizations.Name = "rtbxListOrganizations";
-            this.rtbxListOrganizations.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.rtbxListOrganizations.Size = new System.Drawing.Size(606, 86);
             this.rtbxListOrganizations.TabIndex = 77;
             this.rtbxListOrganizations.Text = "";
@@ -306,40 +459,6 @@
             this.lblListOrganizations.TabIndex = 76;
             this.lblListOrganizations.Text = "Navedite organizacije kojima pripadate";
             // 
-            // gbxOrganizationYesNo
-            // 
-            this.gbxOrganizationYesNo.Controls.Add(this.rbtnOrganizationNo);
-            this.gbxOrganizationYesNo.Controls.Add(this.rbtnOrganizationYes);
-            this.gbxOrganizationYesNo.Location = new System.Drawing.Point(346, 592);
-            this.gbxOrganizationYesNo.Name = "gbxOrganizationYesNo";
-            this.gbxOrganizationYesNo.Size = new System.Drawing.Size(122, 53);
-            this.gbxOrganizationYesNo.TabIndex = 75;
-            this.gbxOrganizationYesNo.TabStop = false;
-            // 
-            // rbtnOrganizationNo
-            // 
-            this.rbtnOrganizationNo.AutoSize = true;
-            this.rbtnOrganizationNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnOrganizationNo.Location = new System.Drawing.Point(68, 13);
-            this.rbtnOrganizationNo.Name = "rbtnOrganizationNo";
-            this.rbtnOrganizationNo.Size = new System.Drawing.Size(47, 24);
-            this.rbtnOrganizationNo.TabIndex = 1;
-            this.rbtnOrganizationNo.TabStop = true;
-            this.rbtnOrganizationNo.Text = "Ne";
-            this.rbtnOrganizationNo.UseVisualStyleBackColor = true;
-            // 
-            // rbtnOrganizationYes
-            // 
-            this.rbtnOrganizationYes.AutoSize = true;
-            this.rbtnOrganizationYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnOrganizationYes.Location = new System.Drawing.Point(8, 14);
-            this.rbtnOrganizationYes.Name = "rbtnOrganizationYes";
-            this.rbtnOrganizationYes.Size = new System.Drawing.Size(48, 24);
-            this.rbtnOrganizationYes.TabIndex = 0;
-            this.rbtnOrganizationYes.TabStop = true;
-            this.rbtnOrganizationYes.Text = "Da";
-            this.rbtnOrganizationYes.UseVisualStyleBackColor = true;
-            // 
             // lblOtherOrganizations
             // 
             this.lblOtherOrganizations.AutoSize = true;
@@ -353,7 +472,7 @@
             // tbxPublisher
             // 
             this.tbxPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPublisher.Location = new System.Drawing.Point(586, 556);
+            this.tbxPublisher.Location = new System.Drawing.Point(585, 561);
             this.tbxPublisher.Name = "tbxPublisher";
             this.tbxPublisher.Size = new System.Drawing.Size(374, 30);
             this.tbxPublisher.TabIndex = 73;
@@ -371,7 +490,7 @@
             // tbxManager
             // 
             this.tbxManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxManager.Location = new System.Drawing.Point(109, 556);
+            this.tbxManager.Location = new System.Drawing.Point(114, 561);
             this.tbxManager.Name = "tbxManager";
             this.tbxManager.Size = new System.Drawing.Size(317, 30);
             this.tbxManager.TabIndex = 71;
@@ -389,7 +508,7 @@
             // tbxStageName
             // 
             this.tbxStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxStageName.Location = new System.Drawing.Point(153, 510);
+            this.tbxStageName.Location = new System.Drawing.Point(153, 515);
             this.tbxStageName.Name = "tbxStageName";
             this.tbxStageName.Size = new System.Drawing.Size(807, 30);
             this.tbxStageName.TabIndex = 69;
@@ -407,7 +526,7 @@
             // tbxBandName
             // 
             this.tbxBandName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxBandName.Location = new System.Drawing.Point(366, 464);
+            this.tbxBandName.Location = new System.Drawing.Point(366, 469);
             this.tbxBandName.Name = "tbxBandName";
             this.tbxBandName.Size = new System.Drawing.Size(594, 30);
             this.tbxBandName.TabIndex = 67;
@@ -425,7 +544,7 @@
             // tbxAdditionalSpecialty
             // 
             this.tbxAdditionalSpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAdditionalSpecialty.Location = new System.Drawing.Point(293, 418);
+            this.tbxAdditionalSpecialty.Location = new System.Drawing.Point(292, 423);
             this.tbxAdditionalSpecialty.Name = "tbxAdditionalSpecialty";
             this.tbxAdditionalSpecialty.Size = new System.Drawing.Size(667, 30);
             this.tbxAdditionalSpecialty.TabIndex = 65;
@@ -440,23 +559,23 @@
             this.lblAdditionalSpecialty.TabIndex = 64;
             this.lblAdditionalSpecialty.Text = "Dodatna glazbena specijalnost";
             // 
-            // tbxPrimarySpecialty
+            // tbxBasicSpecialty
             // 
-            this.tbxPrimarySpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPrimarySpecialty.Location = new System.Drawing.Point(293, 371);
-            this.tbxPrimarySpecialty.Name = "tbxPrimarySpecialty";
-            this.tbxPrimarySpecialty.Size = new System.Drawing.Size(667, 30);
-            this.tbxPrimarySpecialty.TabIndex = 63;
+            this.tbxBasicSpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBasicSpecialty.Location = new System.Drawing.Point(293, 376);
+            this.tbxBasicSpecialty.Name = "tbxBasicSpecialty";
+            this.tbxBasicSpecialty.Size = new System.Drawing.Size(667, 30);
+            this.tbxBasicSpecialty.TabIndex = 63;
             // 
-            // lblPrimarySpecialty
+            // lblBasicSpecialty
             // 
-            this.lblPrimarySpecialty.AutoSize = true;
-            this.lblPrimarySpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrimarySpecialty.Location = new System.Drawing.Point(8, 376);
-            this.lblPrimarySpecialty.Name = "lblPrimarySpecialty";
-            this.lblPrimarySpecialty.Size = new System.Drawing.Size(284, 25);
-            this.lblPrimarySpecialty.TabIndex = 62;
-            this.lblPrimarySpecialty.Text = "Osnovna glazbena specijalnost";
+            this.lblBasicSpecialty.AutoSize = true;
+            this.lblBasicSpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicSpecialty.Location = new System.Drawing.Point(8, 376);
+            this.lblBasicSpecialty.Name = "lblBasicSpecialty";
+            this.lblBasicSpecialty.Size = new System.Drawing.Size(284, 25);
+            this.lblBasicSpecialty.TabIndex = 62;
+            this.lblBasicSpecialty.Text = "Osnovna glazbena specijalnost";
             // 
             // lblMusicActivity
             // 
@@ -505,7 +624,7 @@
             // tbxMusicProfession
             // 
             this.tbxMusicProfession.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMusicProfession.Location = new System.Drawing.Point(655, 268);
+            this.tbxMusicProfession.Location = new System.Drawing.Point(655, 270);
             this.tbxMusicProfession.Name = "tbxMusicProfession";
             this.tbxMusicProfession.Size = new System.Drawing.Size(305, 30);
             this.tbxMusicProfession.TabIndex = 59;
@@ -523,7 +642,7 @@
             // tbxProfession
             // 
             this.tbxProfession.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxProfession.Location = new System.Drawing.Point(159, 265);
+            this.tbxProfession.Location = new System.Drawing.Point(159, 270);
             this.tbxProfession.Name = "tbxProfession";
             this.tbxProfession.Size = new System.Drawing.Size(240, 30);
             this.tbxProfession.TabIndex = 57;
@@ -541,7 +660,7 @@
             // tbxWebPage
             // 
             this.tbxWebPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxWebPage.Location = new System.Drawing.Point(701, 213);
+            this.tbxWebPage.Location = new System.Drawing.Point(701, 216);
             this.tbxWebPage.Name = "tbxWebPage";
             this.tbxWebPage.Size = new System.Drawing.Size(259, 30);
             this.tbxWebPage.TabIndex = 55;
@@ -559,7 +678,7 @@
             // tbxEMail
             // 
             this.tbxEMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxEMail.Location = new System.Drawing.Point(343, 213);
+            this.tbxEMail.Location = new System.Drawing.Point(343, 216);
             this.tbxEMail.Name = "tbxEMail";
             this.tbxEMail.Size = new System.Drawing.Size(292, 30);
             this.tbxEMail.TabIndex = 53;
@@ -577,7 +696,7 @@
             // tbxPhoneNumber
             // 
             this.tbxPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPhoneNumber.Location = new System.Drawing.Point(87, 213);
+            this.tbxPhoneNumber.Location = new System.Drawing.Point(92, 216);
             this.tbxPhoneNumber.Name = "tbxPhoneNumber";
             this.tbxPhoneNumber.Size = new System.Drawing.Size(172, 30);
             this.tbxPhoneNumber.TabIndex = 51;
@@ -595,7 +714,7 @@
             // tbxMailAddress
             // 
             this.tbxMailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMailAddress.Location = new System.Drawing.Point(656, 168);
+            this.tbxMailAddress.Location = new System.Drawing.Point(656, 173);
             this.tbxMailAddress.Name = "tbxMailAddress";
             this.tbxMailAddress.Size = new System.Drawing.Size(304, 30);
             this.tbxMailAddress.TabIndex = 49;
@@ -613,7 +732,7 @@
             // tbxAddressOfResidence
             // 
             this.tbxAddressOfResidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxAddressOfResidence.Location = new System.Drawing.Point(187, 166);
+            this.tbxAddressOfResidence.Location = new System.Drawing.Point(192, 171);
             this.tbxAddressOfResidence.Name = "tbxAddressOfResidence";
             this.tbxAddressOfResidence.Size = new System.Drawing.Size(307, 30);
             this.tbxAddressOfResidence.TabIndex = 47;
@@ -631,7 +750,7 @@
             // tbxDocumentID
             // 
             this.tbxDocumentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxDocumentID.Location = new System.Drawing.Point(642, 114);
+            this.tbxDocumentID.Location = new System.Drawing.Point(642, 121);
             this.tbxDocumentID.Name = "tbxDocumentID";
             this.tbxDocumentID.Size = new System.Drawing.Size(318, 30);
             this.tbxDocumentID.TabIndex = 45;
@@ -646,28 +765,28 @@
             this.lblDocumentID.TabIndex = 44;
             this.lblDocumentID.Text = "Broj identifikacijskog dokumenta";
             // 
-            // tbxOib
+            // tbxPersonalNumber
             // 
-            this.tbxOib.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxOib.Location = new System.Drawing.Point(53, 116);
-            this.tbxOib.Name = "tbxOib";
-            this.tbxOib.Size = new System.Drawing.Size(287, 30);
-            this.tbxOib.TabIndex = 43;
+            this.tbxPersonalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPersonalNumber.Location = new System.Drawing.Point(53, 121);
+            this.tbxPersonalNumber.Name = "tbxPersonalNumber";
+            this.tbxPersonalNumber.Size = new System.Drawing.Size(287, 30);
+            this.tbxPersonalNumber.TabIndex = 43;
             // 
-            // lblOib
+            // lblPersonalNumber
             // 
-            this.lblOib.AutoSize = true;
-            this.lblOib.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOib.Location = new System.Drawing.Point(8, 126);
-            this.lblOib.Name = "lblOib";
-            this.lblOib.Size = new System.Drawing.Size(46, 25);
-            this.lblOib.TabIndex = 42;
-            this.lblOib.Text = "OIB";
+            this.lblPersonalNumber.AutoSize = true;
+            this.lblPersonalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonalNumber.Location = new System.Drawing.Point(8, 126);
+            this.lblPersonalNumber.Name = "lblPersonalNumber";
+            this.lblPersonalNumber.Size = new System.Drawing.Size(46, 25);
+            this.lblPersonalNumber.TabIndex = 42;
+            this.lblPersonalNumber.Text = "OIB";
             // 
             // tbxMemberNumber
             // 
             this.tbxMemberNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxMemberNumber.Location = new System.Drawing.Point(761, 7);
+            this.tbxMemberNumber.Location = new System.Drawing.Point(758, 12);
             this.tbxMemberNumber.Name = "tbxMemberNumber";
             this.tbxMemberNumber.Size = new System.Drawing.Size(202, 30);
             this.tbxMemberNumber.TabIndex = 41;
@@ -690,7 +809,7 @@
             "Muški",
             "Ženski",
             "Drugi"});
-            this.cbxGender.Location = new System.Drawing.Point(514, 5);
+            this.cbxGender.Location = new System.Drawing.Point(514, 9);
             this.cbxGender.Name = "cbxGender";
             this.cbxGender.Size = new System.Drawing.Size(121, 33);
             this.cbxGender.TabIndex = 39;
@@ -708,7 +827,7 @@
             // tbxSurname
             // 
             this.tbxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSurname.Location = new System.Drawing.Point(299, 5);
+            this.tbxSurname.Location = new System.Drawing.Point(304, 12);
             this.tbxSurname.Name = "tbxSurname";
             this.tbxSurname.Size = new System.Drawing.Size(151, 30);
             this.tbxSurname.TabIndex = 37;
@@ -726,7 +845,7 @@
             // tbxName
             // 
             this.tbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxName.Location = new System.Drawing.Point(53, 5);
+            this.tbxName.Location = new System.Drawing.Point(53, 12);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(151, 30);
             this.tbxName.TabIndex = 35;
@@ -762,7 +881,7 @@
             // tbxPOB
             // 
             this.tbxPOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPOB.Location = new System.Drawing.Point(500, 60);
+            this.tbxPOB.Location = new System.Drawing.Point(503, 65);
             this.tbxPOB.Name = "tbxPOB";
             this.tbxPOB.Size = new System.Drawing.Size(151, 30);
             this.tbxPOB.TabIndex = 31;
@@ -780,7 +899,7 @@
             // dtpDOB
             // 
             this.dtpDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDOB.Location = new System.Drawing.Point(148, 60);
+            this.dtpDOB.Location = new System.Drawing.Point(153, 65);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(200, 30);
             this.dtpDOB.TabIndex = 29;
@@ -798,113 +917,445 @@
             // gpbControl
             // 
             this.gpbControl.BackColor = System.Drawing.Color.AliceBlue;
+            this.gpbControl.Controls.Add(this.btnCancel);
+            this.gpbControl.Controls.Add(this.btnUpdate);
+            this.gpbControl.Controls.Add(this.btnShowTable);
             this.gpbControl.Controls.Add(this.btnDelete);
             this.gpbControl.Controls.Add(this.btnSave);
             this.gpbControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gpbControl.Location = new System.Drawing.Point(3, 384);
+            this.gpbControl.Location = new System.Drawing.Point(3, 401);
             this.gpbControl.Name = "gpbControl";
             this.gpbControl.Size = new System.Drawing.Size(993, 45);
             this.gpbControl.TabIndex = 0;
             this.gpbControl.TabStop = false;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(505, 13);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(105, 28);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Ažuriraj";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnShowTable
+            // 
+            this.btnShowTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowTable.Location = new System.Drawing.Point(881, 13);
+            this.btnShowTable.Name = "btnShowTable";
+            this.btnShowTable.Size = new System.Drawing.Size(105, 28);
+            this.btnShowTable.TabIndex = 2;
+            this.btnShowTable.Text = "Tablica";
+            this.btnShowTable.UseVisualStyleBackColor = true;
+            this.btnShowTable.Click += new System.EventHandler(this.btnShowTable_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDelete.Location = new System.Drawing.Point(496, 16);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(616, 13);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(105, 28);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Obriši";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(415, 16);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(283, 13);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(105, 28);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Spremi";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbpMembersTable
             // 
-            this.tbpMembersTable.Controls.Add(this.gbxMembersControl);
             this.tbpMembersTable.Controls.Add(this.dgvMembers);
+            this.tbpMembersTable.Controls.Add(this.gbxMembersControl);
             this.tbpMembersTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpMembersTable.Location = new System.Drawing.Point(4, 22);
+            this.tbpMembersTable.Location = new System.Drawing.Point(4, 5);
             this.tbpMembersTable.Name = "tbpMembersTable";
             this.tbpMembersTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMembersTable.Size = new System.Drawing.Size(999, 432);
+            this.tbpMembersTable.Size = new System.Drawing.Size(999, 449);
             this.tbpMembersTable.TabIndex = 1;
-            this.tbpMembersTable.Text = "Tablica članova";
+            this.tbpMembersTable.Text = "Tablica Članova";
             this.tbpMembersTable.UseVisualStyleBackColor = true;
             // 
             // dgvMembers
             // 
+            this.dgvMembers.AllowUserToAddRows = false;
+            this.dgvMembers.AllowUserToDeleteRows = false;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtxtMemberID,
+            this.dgvtxtName,
+            this.dgvtxtSurname,
+            this.dgvGender,
+            this.dgvtxtDOB,
+            this.dgvtxtPOB,
+            this.dgvtxtNationality,
+            this.dgvtxtPersonalNumber,
+            this.dgvtxtDocumentIDNumber,
+            this.dgvtxtAddressOfResidence,
+            this.dgvtxtMailAddress,
+            this.dgvtxtPhoneNumber,
+            this.dgvtxtEMail,
+            this.dgvtxtWebPage,
+            this.dgvtxtMembershipType,
+            this.dgvtxtDatePaid,
+            this.dgvtxtProfession,
+            this.dgvtxtMusicProfession,
+            this.dgvtxtMusicActivityType,
+            this.dgvtxtBasicSpecialty,
+            this.dgvtxtAdditionalSpecialty,
+            this.dgvtxtBandName,
+            this.dgvtxtStageName,
+            this.dgvtxtManagerName,
+            this.dgvtxtPublisher,
+            this.dgvtxtMemberOfOtherOrganizations,
+            this.dgvtxtOtherOrganizations,
+            this.dgvtxtOwnEquipment,
+            this.dgvtxtMusicCategory,
+            this.dgvtxtBiography});
             this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMembers.Location = new System.Drawing.Point(3, 3);
             this.dgvMembers.Name = "dgvMembers";
-            this.dgvMembers.Size = new System.Drawing.Size(993, 426);
+            this.dgvMembers.ReadOnly = true;
+            this.dgvMembers.Size = new System.Drawing.Size(993, 387);
             this.dgvMembers.TabIndex = 0;
+            this.dgvMembers.DoubleClick += new System.EventHandler(this.dgvMembers_DoubleClick);
+            // 
+            // dgvtxtMemberID
+            // 
+            this.dgvtxtMemberID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMemberID.DataPropertyName = "MemberID";
+            this.dgvtxtMemberID.HeaderText = "Broj Člana";
+            this.dgvtxtMemberID.Name = "dgvtxtMemberID";
+            this.dgvtxtMemberID.ReadOnly = true;
+            this.dgvtxtMemberID.Width = 90;
+            // 
+            // dgvtxtName
+            // 
+            this.dgvtxtName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtName.DataPropertyName = "Name";
+            this.dgvtxtName.HeaderText = "Ime";
+            this.dgvtxtName.Name = "dgvtxtName";
+            this.dgvtxtName.ReadOnly = true;
+            this.dgvtxtName.Width = 55;
+            // 
+            // dgvtxtSurname
+            // 
+            this.dgvtxtSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtSurname.DataPropertyName = "Surname";
+            this.dgvtxtSurname.HeaderText = "Prezime";
+            this.dgvtxtSurname.Name = "dgvtxtSurname";
+            this.dgvtxtSurname.ReadOnly = true;
+            this.dgvtxtSurname.Width = 84;
+            // 
+            // dgvGender
+            // 
+            this.dgvGender.DataPropertyName = "Gender";
+            this.dgvGender.HeaderText = "Spol";
+            this.dgvGender.Name = "dgvGender";
+            this.dgvGender.ReadOnly = true;
+            // 
+            // dgvtxtDOB
+            // 
+            this.dgvtxtDOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtDOB.DataPropertyName = "DOB";
+            this.dgvtxtDOB.HeaderText = "Datum Rođenja";
+            this.dgvtxtDOB.Name = "dgvtxtDOB";
+            this.dgvtxtDOB.ReadOnly = true;
+            this.dgvtxtDOB.Width = 120;
+            // 
+            // dgvtxtPOB
+            // 
+            this.dgvtxtPOB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtPOB.DataPropertyName = "POB";
+            this.dgvtxtPOB.HeaderText = "Mjesto Rođenja";
+            this.dgvtxtPOB.Name = "dgvtxtPOB";
+            this.dgvtxtPOB.ReadOnly = true;
+            this.dgvtxtPOB.Width = 120;
+            // 
+            // dgvtxtNationality
+            // 
+            this.dgvtxtNationality.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtNationality.DataPropertyName = "Nationality";
+            this.dgvtxtNationality.HeaderText = "Državljanstvo";
+            this.dgvtxtNationality.Name = "dgvtxtNationality";
+            this.dgvtxtNationality.ReadOnly = true;
+            this.dgvtxtNationality.Width = 118;
+            // 
+            // dgvtxtPersonalNumber
+            // 
+            this.dgvtxtPersonalNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtPersonalNumber.DataPropertyName = "PersonalNumber";
+            this.dgvtxtPersonalNumber.HeaderText = "OIB";
+            this.dgvtxtPersonalNumber.Name = "dgvtxtPersonalNumber";
+            this.dgvtxtPersonalNumber.ReadOnly = true;
+            this.dgvtxtPersonalNumber.Width = 56;
+            // 
+            // dgvtxtDocumentIDNumber
+            // 
+            this.dgvtxtDocumentIDNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtDocumentIDNumber.DataPropertyName = "DocumentIDNumber";
+            this.dgvtxtDocumentIDNumber.HeaderText = "Broj Dokumenta";
+            this.dgvtxtDocumentIDNumber.Name = "dgvtxtDocumentIDNumber";
+            this.dgvtxtDocumentIDNumber.ReadOnly = true;
+            this.dgvtxtDocumentIDNumber.Width = 123;
+            // 
+            // dgvtxtAddressOfResidence
+            // 
+            this.dgvtxtAddressOfResidence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtAddressOfResidence.DataPropertyName = "AddressOfResidence";
+            this.dgvtxtAddressOfResidence.HeaderText = "Adresa Prebivališta";
+            this.dgvtxtAddressOfResidence.Name = "dgvtxtAddressOfResidence";
+            this.dgvtxtAddressOfResidence.ReadOnly = true;
+            this.dgvtxtAddressOfResidence.Width = 142;
+            // 
+            // dgvtxtMailAddress
+            // 
+            this.dgvtxtMailAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMailAddress.DataPropertyName = "MailAddress";
+            this.dgvtxtMailAddress.HeaderText = "Adresa Pošte";
+            this.dgvtxtMailAddress.Name = "dgvtxtMailAddress";
+            this.dgvtxtMailAddress.ReadOnly = true;
+            this.dgvtxtMailAddress.Width = 108;
+            // 
+            // dgvtxtPhoneNumber
+            // 
+            this.dgvtxtPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.dgvtxtPhoneNumber.HeaderText = "Broj Telefona";
+            this.dgvtxtPhoneNumber.Name = "dgvtxtPhoneNumber";
+            this.dgvtxtPhoneNumber.ReadOnly = true;
+            this.dgvtxtPhoneNumber.Width = 108;
+            // 
+            // dgvtxtEMail
+            // 
+            this.dgvtxtEMail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtEMail.DataPropertyName = "EMail";
+            this.dgvtxtEMail.HeaderText = "E-mail";
+            this.dgvtxtEMail.Name = "dgvtxtEMail";
+            this.dgvtxtEMail.ReadOnly = true;
+            this.dgvtxtEMail.Width = 72;
+            // 
+            // dgvtxtWebPage
+            // 
+            this.dgvtxtWebPage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtWebPage.DataPropertyName = "WebPage";
+            this.dgvtxtWebPage.HeaderText = "Web Stranica";
+            this.dgvtxtWebPage.Name = "dgvtxtWebPage";
+            this.dgvtxtWebPage.ReadOnly = true;
+            this.dgvtxtWebPage.Width = 108;
+            // 
+            // dgvtxtMembershipType
+            // 
+            this.dgvtxtMembershipType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMembershipType.DataPropertyName = "MembershipType";
+            this.dgvtxtMembershipType.HeaderText = "Vrsta Članstva";
+            this.dgvtxtMembershipType.Name = "dgvtxtMembershipType";
+            this.dgvtxtMembershipType.ReadOnly = true;
+            this.dgvtxtMembershipType.Width = 114;
+            // 
+            // dgvtxtDatePaid
+            // 
+            this.dgvtxtDatePaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtDatePaid.DataPropertyName = "DatePaid";
+            this.dgvtxtDatePaid.HeaderText = "Datum Plaćanja Članarine";
+            this.dgvtxtDatePaid.Name = "dgvtxtDatePaid";
+            this.dgvtxtDatePaid.ReadOnly = true;
+            this.dgvtxtDatePaid.Width = 178;
+            // 
+            // dgvtxtProfession
+            // 
+            this.dgvtxtProfession.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtProfession.DataPropertyName = "Profession";
+            this.dgvtxtProfession.HeaderText = "Struka";
+            this.dgvtxtProfession.Name = "dgvtxtProfession";
+            this.dgvtxtProfession.ReadOnly = true;
+            this.dgvtxtProfession.Width = 74;
+            // 
+            // dgvtxtMusicProfession
+            // 
+            this.dgvtxtMusicProfession.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMusicProfession.DataPropertyName = "MusicProfession";
+            this.dgvtxtMusicProfession.HeaderText = "Glazbena struka";
+            this.dgvtxtMusicProfession.Name = "dgvtxtMusicProfession";
+            this.dgvtxtMusicProfession.ReadOnly = true;
+            this.dgvtxtMusicProfession.Width = 125;
+            // 
+            // dgvtxtMusicActivityType
+            // 
+            this.dgvtxtMusicActivityType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMusicActivityType.DataPropertyName = "MusicActivityType";
+            this.dgvtxtMusicActivityType.HeaderText = "Tip Glazbene Aktivnosti";
+            this.dgvtxtMusicActivityType.Name = "dgvtxtMusicActivityType";
+            this.dgvtxtMusicActivityType.ReadOnly = true;
+            this.dgvtxtMusicActivityType.Width = 166;
+            // 
+            // dgvtxtBasicSpecialty
+            // 
+            this.dgvtxtBasicSpecialty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtBasicSpecialty.DataPropertyName = "BasicSpecialty";
+            this.dgvtxtBasicSpecialty.HeaderText = "Osnovne Glazbene Specijalnosti";
+            this.dgvtxtBasicSpecialty.Name = "dgvtxtBasicSpecialty";
+            this.dgvtxtBasicSpecialty.ReadOnly = true;
+            this.dgvtxtBasicSpecialty.Width = 216;
+            // 
+            // dgvtxtAdditionalSpecialty
+            // 
+            this.dgvtxtAdditionalSpecialty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtAdditionalSpecialty.DataPropertyName = "AdditionalSpecialty";
+            this.dgvtxtAdditionalSpecialty.HeaderText = "Dodatne Glazbene Specijalnosti";
+            this.dgvtxtAdditionalSpecialty.Name = "dgvtxtAdditionalSpecialty";
+            this.dgvtxtAdditionalSpecialty.ReadOnly = true;
+            this.dgvtxtAdditionalSpecialty.Width = 214;
+            // 
+            // dgvtxtBandName
+            // 
+            this.dgvtxtBandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtBandName.DataPropertyName = "BandName";
+            this.dgvtxtBandName.HeaderText = "Naziv Glazbene Skupine";
+            this.dgvtxtBandName.Name = "dgvtxtBandName";
+            this.dgvtxtBandName.ReadOnly = true;
+            this.dgvtxtBandName.Width = 171;
+            // 
+            // dgvtxtStageName
+            // 
+            this.dgvtxtStageName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtStageName.DataPropertyName = "StageName";
+            this.dgvtxtStageName.HeaderText = "Umjetničko Ime";
+            this.dgvtxtStageName.Name = "dgvtxtStageName";
+            this.dgvtxtStageName.ReadOnly = true;
+            this.dgvtxtStageName.Width = 117;
+            // 
+            // dgvtxtManagerName
+            // 
+            this.dgvtxtManagerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtManagerName.DataPropertyName = "ManagerName";
+            this.dgvtxtManagerName.HeaderText = "Menadžer";
+            this.dgvtxtManagerName.Name = "dgvtxtManagerName";
+            this.dgvtxtManagerName.ReadOnly = true;
+            this.dgvtxtManagerName.Width = 96;
+            // 
+            // dgvtxtPublisher
+            // 
+            this.dgvtxtPublisher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtPublisher.DataPropertyName = "Publisher";
+            this.dgvtxtPublisher.HeaderText = "Izdavačka Kuća";
+            this.dgvtxtPublisher.Name = "dgvtxtPublisher";
+            this.dgvtxtPublisher.ReadOnly = true;
+            this.dgvtxtPublisher.Width = 121;
+            // 
+            // dgvtxtMemberOfOtherOrganizations
+            // 
+            this.dgvtxtMemberOfOtherOrganizations.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMemberOfOtherOrganizations.DataPropertyName = "MemberOfOtherOrganizations";
+            this.dgvtxtMemberOfOtherOrganizations.HeaderText = "Član Drugih Organizacija";
+            this.dgvtxtMemberOfOtherOrganizations.Name = "dgvtxtMemberOfOtherOrganizations";
+            this.dgvtxtMemberOfOtherOrganizations.ReadOnly = true;
+            this.dgvtxtMemberOfOtherOrganizations.Width = 173;
+            // 
+            // dgvtxtOtherOrganizations
+            // 
+            this.dgvtxtOtherOrganizations.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtOtherOrganizations.DataPropertyName = "OtherOrganizations";
+            this.dgvtxtOtherOrganizations.HeaderText = "Ostale Organizacije";
+            this.dgvtxtOtherOrganizations.Name = "dgvtxtOtherOrganizations";
+            this.dgvtxtOtherOrganizations.ReadOnly = true;
+            this.dgvtxtOtherOrganizations.Width = 143;
+            // 
+            // dgvtxtOwnEquipment
+            // 
+            this.dgvtxtOwnEquipment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtOwnEquipment.DataPropertyName = "OwnEquipment";
+            this.dgvtxtOwnEquipment.HeaderText = "Posjeduje Vlastitu Opremu";
+            this.dgvtxtOwnEquipment.Name = "dgvtxtOwnEquipment";
+            this.dgvtxtOwnEquipment.ReadOnly = true;
+            this.dgvtxtOwnEquipment.Width = 136;
+            // 
+            // dgvtxtMusicCategory
+            // 
+            this.dgvtxtMusicCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtMusicCategory.DataPropertyName = "MusicCategory";
+            this.dgvtxtMusicCategory.HeaderText = "Kategorije Glazbe";
+            this.dgvtxtMusicCategory.Name = "dgvtxtMusicCategory";
+            this.dgvtxtMusicCategory.ReadOnly = true;
+            this.dgvtxtMusicCategory.Width = 133;
+            // 
+            // dgvtxtBiography
+            // 
+            this.dgvtxtBiography.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvtxtBiography.DataPropertyName = "Biography";
+            this.dgvtxtBiography.HeaderText = "Biografija";
+            this.dgvtxtBiography.Name = "dgvtxtBiography";
+            this.dgvtxtBiography.ReadOnly = true;
+            this.dgvtxtBiography.Width = 92;
             // 
             // gbxMembersControl
             // 
             this.gbxMembersControl.BackColor = System.Drawing.Color.Azure;
-            this.gbxMembersControl.Controls.Add(this.button3);
-            this.gbxMembersControl.Controls.Add(this.button2);
-            this.gbxMembersControl.Controls.Add(this.button1);
+            this.gbxMembersControl.Controls.Add(this.btnAddNewMember);
             this.gbxMembersControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gbxMembersControl.Location = new System.Drawing.Point(3, 372);
+            this.gbxMembersControl.Location = new System.Drawing.Point(3, 390);
             this.gbxMembersControl.Name = "gbxMembersControl";
-            this.gbxMembersControl.Size = new System.Drawing.Size(993, 57);
+            this.gbxMembersControl.Size = new System.Drawing.Size(993, 56);
             this.gbxMembersControl.TabIndex = 1;
             this.gbxMembersControl.TabStop = false;
             // 
-            // button1
+            // btnAddNewMember
             // 
-            this.button1.Location = new System.Drawing.Point(28, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddNewMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddNewMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewMember.Location = new System.Drawing.Point(6, 22);
+            this.btnAddNewMember.Name = "btnAddNewMember";
+            this.btnAddNewMember.Size = new System.Drawing.Size(105, 28);
+            this.btnAddNewMember.TabIndex = 0;
+            this.btnAddNewMember.Text = "Dodaj člana";
+            this.btnAddNewMember.UseVisualStyleBackColor = true;
+            this.btnAddNewMember.Click += new System.EventHandler(this.btnAddNewMember_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(110, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(394, 13);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(105, 28);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Odustani";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(192, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 463);
             this.Controls.Add(this.tbcMembers);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormMembers";
+            this.Text = "Tablica Članova";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tbcMembers.ResumeLayout(false);
             this.tbpForm.ResumeLayout(false);
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
-            this.gbxEquipmentYesNo.ResumeLayout(false);
-            this.gbxEquipmentYesNo.PerformLayout();
-            this.gbxOrganizationYesNo.ResumeLayout(false);
-            this.gbxOrganizationYesNo.PerformLayout();
+            this.pnlMemberOfOtherOrganizations.ResumeLayout(false);
+            this.pnlMemberOfOtherOrganizations.PerformLayout();
+            this.pnlOwnEquipment.ResumeLayout(false);
+            this.pnlOwnEquipment.PerformLayout();
+            this.pnlMembershipType.ResumeLayout(false);
+            this.pnlMembershipType.PerformLayout();
             this.gpbActivity.ResumeLayout(false);
             this.gpbActivity.PerformLayout();
             this.gpbControl.ResumeLayout(false);
@@ -930,11 +1381,10 @@
         private System.Windows.Forms.Label lblAddressOfResidence;
         private System.Windows.Forms.TextBox tbxDocumentID;
         private System.Windows.Forms.Label lblDocumentID;
-        private System.Windows.Forms.TextBox tbxOib;
-        private System.Windows.Forms.Label lblOib;
+        private System.Windows.Forms.TextBox tbxPersonalNumber;
+        private System.Windows.Forms.Label lblPersonalNumber;
         private System.Windows.Forms.TextBox tbxMemberNumber;
         private System.Windows.Forms.Label lblMemberNumber;
-        private System.Windows.Forms.ComboBox cbxGender;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.TextBox tbxSurname;
         private System.Windows.Forms.Label lblSurname;
@@ -964,15 +1414,14 @@
         private System.Windows.Forms.Label lblBandName;
         private System.Windows.Forms.TextBox tbxAdditionalSpecialty;
         private System.Windows.Forms.Label lblAdditionalSpecialty;
-        private System.Windows.Forms.TextBox tbxPrimarySpecialty;
-        private System.Windows.Forms.Label lblPrimarySpecialty;
+        private System.Windows.Forms.TextBox tbxBasicSpecialty;
+        private System.Windows.Forms.Label lblBasicSpecialty;
         private System.Windows.Forms.TextBox tbxStageName;
         private System.Windows.Forms.Label lblStageName;
         private System.Windows.Forms.TextBox tbxManager;
         private System.Windows.Forms.Label lblManager;
         private System.Windows.Forms.TextBox tbxPublisher;
         private System.Windows.Forms.Label lblPublisher;
-        private System.Windows.Forms.GroupBox gbxOrganizationYesNo;
         private System.Windows.Forms.RadioButton rbtnOrganizationNo;
         private System.Windows.Forms.RadioButton rbtnOrganizationYes;
         private System.Windows.Forms.Label lblOtherOrganizations;
@@ -980,7 +1429,6 @@
         private System.Windows.Forms.RichTextBox rtbxListOrganizations;
         private System.Windows.Forms.TextBox tbxMusicCategory;
         private System.Windows.Forms.Label lblMusicCategory;
-        private System.Windows.Forms.GroupBox gbxEquipmentYesNo;
         private System.Windows.Forms.RadioButton rbtnEquipmentNo;
         private System.Windows.Forms.RadioButton rbtnEquipmentYes;
         private System.Windows.Forms.Label lblOwnEquipment;
@@ -988,9 +1436,50 @@
         private System.Windows.Forms.Label lblBiography;
         private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.GroupBox gbxMembersControl;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNewMember;
+        private System.Windows.Forms.Label lblMembershipType;
+        private System.Windows.Forms.RadioButton rbtnHonorary;
+        private System.Windows.Forms.RadioButton rbtnJoined;
+        private System.Windows.Forms.RadioButton rbtnActive;
+        private System.Windows.Forms.Panel pnlMemberOfOtherOrganizations;
+        private System.Windows.Forms.Panel pnlOwnEquipment;
+        private System.Windows.Forms.Panel pnlMembershipType;
+        private System.Windows.Forms.DateTimePicker dtpDatePaid;
+        private System.Windows.Forms.Label lblDatePaid;
+        private System.Windows.Forms.Button btnShowTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMemberID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtDOB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPOB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtNationality;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPersonalNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtDocumentIDNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtAddressOfResidence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMailAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtEMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtWebPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMembershipType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtDatePaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtProfession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMusicProfession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMusicActivityType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtBasicSpecialty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtAdditionalSpecialty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtBandName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtStageName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtManagerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPublisher;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMemberOfOtherOrganizations;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtOtherOrganizations;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtOwnEquipment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtMusicCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtBiography;
+        private System.Windows.Forms.ComboBox cbxGender;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
