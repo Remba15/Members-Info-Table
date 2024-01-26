@@ -398,5 +398,11 @@ namespace OGI_HR_Clanovi
                 sqlCommand.ExecuteScalar();
             }
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            tbcMembers.SelectTab("tbpMembersTable");
+            rtbMailingList.Text = string.Empty;
+        }
     }
 }
