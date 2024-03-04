@@ -403,6 +403,93 @@ namespace OGI_HR_Clanovi
         {
             tbcMembers.SelectTab("tbpMembersTable");
             rtbMailingList.Text = string.Empty;
+            dgvMailingList.Columns.Clear();
+            
+        }
+
+        private void btnAboutToExpire_Click(object sender, EventArgs e)
+        {
+            using(SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+                using(SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewAboutToExpire", connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+
+                    dgvMailingList.DataSource = dataTable;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
+
+        private void btnPermInactive_Click(object sender, EventArgs e)
+        {
+            using(SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+                using(SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewLongInactive", connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+
+                    dgvMailingList.DataSource = dataTable;
+                    foreach(DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
+
+        private void btnInactive_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewInactive", connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+
+                    dgvMailingList.DataSource = dataTable;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
+
+        private void btnExpired_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewRecentlyExpired", connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+
+                    dgvMailingList.DataSource = dataTable;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(rtbMailingList.Text);
         }
     }
 }
