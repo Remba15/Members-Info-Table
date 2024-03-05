@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbcMembers = new System.Windows.Forms.TabControl();
             this.tbpForm = new System.Windows.Forms.TabPage();
             this.pnlForm = new System.Windows.Forms.Panel();
@@ -139,12 +139,17 @@
             this.dgvtxtOwnEquipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtMusicCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtBiography = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.btnCancelSearch = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             this.pnlMembersTableControl = new System.Windows.Forms.Panel();
+            this.btnAddNewMember = new System.Windows.Forms.Button();
             this.btnAboutToExpire = new System.Windows.Forms.Button();
             this.btnPermInactive = new System.Windows.Forms.Button();
-            this.btnAddNewMember = new System.Windows.Forms.Button();
             this.btnInactive = new System.Windows.Forms.Button();
             this.btnExpired = new System.Windows.Forms.Button();
+            this.lblMembersWho = new System.Windows.Forms.Label();
             this.pnlMembersTable = new System.Windows.Forms.Panel();
             this.tbpMailingList = new System.Windows.Forms.TabPage();
             this.pnlMailingList = new System.Windows.Forms.Panel();
@@ -153,7 +158,6 @@
             this.pnlMailingControl = new System.Windows.Forms.Panel();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.lblMembersWho = new System.Windows.Forms.Label();
             this.tbcMembers.SuspendLayout();
             this.tbpForm.SuspendLayout();
             this.pnlForm.SuspendLayout();
@@ -164,6 +168,7 @@
             this.gpbControl.SuspendLayout();
             this.tbpMembersTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
+            this.pnlSearch.SuspendLayout();
             this.pnlMembersTableControl.SuspendLayout();
             this.tbpMailingList.SuspendLayout();
             this.pnlMailingList.SuspendLayout();
@@ -1008,6 +1013,7 @@
             // tbpMembersTable
             // 
             this.tbpMembersTable.Controls.Add(this.dgvMembers);
+            this.tbpMembersTable.Controls.Add(this.pnlSearch);
             this.tbpMembersTable.Controls.Add(this.pnlMembersTableControl);
             this.tbpMembersTable.Controls.Add(this.pnlMembersTable);
             this.tbpMembersTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1056,10 +1062,10 @@
             this.dgvtxtMusicCategory,
             this.dgvtxtBiography});
             this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMembers.Location = new System.Drawing.Point(3, 3);
+            this.dgvMembers.Location = new System.Drawing.Point(3, 39);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
-            this.dgvMembers.Size = new System.Drawing.Size(993, 372);
+            this.dgvMembers.Size = new System.Drawing.Size(993, 336);
             this.dgvMembers.TabIndex = 0;
             this.dgvMembers.DoubleClick += new System.EventHandler(this.dgvMembers_DoubleClick);
             // 
@@ -1331,6 +1337,54 @@
             this.dgvtxtBiography.ReadOnly = true;
             this.dgvtxtBiography.Width = 92;
             // 
+            // pnlSearch
+            // 
+            this.pnlSearch.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlSearch.Controls.Add(this.btnCancelSearch);
+            this.pnlSearch.Controls.Add(this.btnSearch);
+            this.pnlSearch.Controls.Add(this.tbxSearch);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSearch.Location = new System.Drawing.Point(3, 3);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(993, 36);
+            this.pnlSearch.TabIndex = 4;
+            // 
+            // btnCancelSearch
+            // 
+            this.btnCancelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelSearch.Location = new System.Drawing.Point(452, 4);
+            this.btnCancelSearch.Name = "btnCancelSearch";
+            this.btnCancelSearch.Size = new System.Drawing.Size(104, 26);
+            this.btnCancelSearch.TabIndex = 3;
+            this.btnCancelSearch.Text = "Poništi";
+            this.btnCancelSearch.UseVisualStyleBackColor = true;
+            this.btnCancelSearch.Visible = false;
+            this.btnCancelSearch.Click += new System.EventHandler(this.btnCancelSearch_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSearch.Location = new System.Drawing.Point(342, 4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(104, 26);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Pretraživanje";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxSearch.Location = new System.Drawing.Point(3, 4);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(333, 26);
+            this.tbxSearch.TabIndex = 0;
+            this.tbxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxSearch_KeyPress);
+            // 
             // pnlMembersTableControl
             // 
             this.pnlMembersTableControl.BackColor = System.Drawing.Color.LightBlue;
@@ -1345,6 +1399,18 @@
             this.pnlMembersTableControl.Name = "pnlMembersTableControl";
             this.pnlMembersTableControl.Size = new System.Drawing.Size(993, 54);
             this.pnlMembersTableControl.TabIndex = 2;
+            // 
+            // btnAddNewMember
+            // 
+            this.btnAddNewMember.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddNewMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewMember.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewMember.Name = "btnAddNewMember";
+            this.btnAddNewMember.Size = new System.Drawing.Size(105, 54);
+            this.btnAddNewMember.TabIndex = 0;
+            this.btnAddNewMember.Text = "Dodaj člana";
+            this.btnAddNewMember.UseVisualStyleBackColor = true;
+            this.btnAddNewMember.Click += new System.EventHandler(this.btnAddNewMember_Click);
             // 
             // btnAboutToExpire
             // 
@@ -1370,18 +1436,6 @@
             this.btnPermInactive.UseVisualStyleBackColor = true;
             this.btnPermInactive.Click += new System.EventHandler(this.btnPermInactive_Click);
             // 
-            // btnAddNewMember
-            // 
-            this.btnAddNewMember.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddNewMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewMember.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewMember.Name = "btnAddNewMember";
-            this.btnAddNewMember.Size = new System.Drawing.Size(105, 54);
-            this.btnAddNewMember.TabIndex = 0;
-            this.btnAddNewMember.Text = "Dodaj člana";
-            this.btnAddNewMember.UseVisualStyleBackColor = true;
-            this.btnAddNewMember.Click += new System.EventHandler(this.btnAddNewMember_Click);
-            // 
             // btnInactive
             // 
             this.btnInactive.Dock = System.Windows.Forms.DockStyle.Right;
@@ -1406,8 +1460,20 @@
             this.btnExpired.UseVisualStyleBackColor = true;
             this.btnExpired.Click += new System.EventHandler(this.btnExpired_Click);
             // 
+            // lblMembersWho
+            // 
+            this.lblMembersWho.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMembersWho.AutoSize = true;
+            this.lblMembersWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMembersWho.Location = new System.Drawing.Point(218, 12);
+            this.lblMembersWho.Name = "lblMembersWho";
+            this.lblMembersWho.Size = new System.Drawing.Size(249, 25);
+            this.lblMembersWho.TabIndex = 5;
+            this.lblMembersWho.Text = "Članovi kojima je članarina:";
+            // 
             // pnlMembersTable
             // 
+            this.pnlMembersTable.BackColor = System.Drawing.Color.Transparent;
             this.pnlMembersTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMembersTable.Location = new System.Drawing.Point(3, 3);
             this.pnlMembersTable.Name = "pnlMembersTable";
@@ -1442,20 +1508,21 @@
             this.dgvMailingList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMailingList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvMailingList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMailingList.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMailingList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMailingList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMailingList.Location = new System.Drawing.Point(0, 0);
             this.dgvMailingList.Name = "dgvMailingList";
             this.dgvMailingList.ReadOnly = true;
             this.dgvMailingList.Size = new System.Drawing.Size(999, 250);
             this.dgvMailingList.TabIndex = 1;
+            this.dgvMailingList.DoubleClick += new System.EventHandler(this.dgvMailingList_DoubleClick);
             // 
             // rtbMailingList
             // 
@@ -1503,17 +1570,6 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // lblMembersWho
-            // 
-            this.lblMembersWho.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblMembersWho.AutoSize = true;
-            this.lblMembersWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembersWho.Location = new System.Drawing.Point(218, 12);
-            this.lblMembersWho.Name = "lblMembersWho";
-            this.lblMembersWho.Size = new System.Drawing.Size(249, 25);
-            this.lblMembersWho.TabIndex = 5;
-            this.lblMembersWho.Text = "Članovi kojima je članarina:";
-            // 
             // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1538,6 +1594,8 @@
             this.gpbControl.ResumeLayout(false);
             this.tbpMembersTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             this.pnlMembersTableControl.ResumeLayout(false);
             this.pnlMembersTableControl.PerformLayout();
             this.tbpMailingList.ResumeLayout(false);
@@ -1675,6 +1733,10 @@
         private System.Windows.Forms.Panel pnlMembersTable;
         private System.Windows.Forms.DataGridView dgvMailingList;
         private System.Windows.Forms.Label lblMembersWho;
+        private System.Windows.Forms.Panel pnlSearch;
+        private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnCancelSearch;
     }
 }
 

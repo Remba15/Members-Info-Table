@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Text;
+using System.Runtime.CompilerServices;
 
 namespace OGI_HR_Clanovi
 {
     public partial class FormMembers : Form
     {
-        string strConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=OGIHRClanovi;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+        private DataTable membersDataTable = new DataTable();
+        private string strConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=OGIHRClanovi;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
         public FormMembers()
         {
             InitializeComponent();
@@ -211,6 +214,7 @@ namespace OGI_HR_Clanovi
 
         private void btnShowTable_Click(object sender, EventArgs e)
         {
+            membersDataTable.Clear();
             tbcMembers.SelectTab("tbpMembersTable");
             FillDataGridView();
             EnableAllFormButtons();
@@ -491,5 +495,65 @@ namespace OGI_HR_Clanovi
         {
             Clipboard.SetText(rtbMailingList.Text);
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM Members M WHERE M.Name LIKE '%' + @SearchString + '%' OR M.Surname LIKE '%' + @SearchString + '%' OR M.PersonalNumber LIKE '%' + @SearchString + '%' OR M.EMail LIKE '%' + @SearchString + '%'";
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SearchString", tbxSearch.Text);
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command))
+                    {
+                        sqlDataAdapter.Fill(dataTable);
+                    }
+                }
+            }
+            btnCancelSearch.Visible = true;
+            dgvMembers.DataSource = dataTable;
+        }
+
+        private void tbxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                btnSearch_Click(sender, e);
+            }
+        }
+
+        private void btnCancelSearch_Click(object sender, EventArgs e)
+        {
+            membersDataTable.Clear();
+            FillDataGridView();
+            tbxSearch.Text = String.Empty;
+            btnCancelSearch.Visible = false;
+        }
+
+        private void dgvMailingList_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvMembers.CurrentRow.Index != -1) //da se ne moze kliknit header red
+            {
+                DataGridViewRow mCurrentRow = dgvMailingList.CurrentRow;
+                using (SqlConnection sqlConnection = new SqlConnection(strConnectionString))
+                {
+                    sqlConnection.Open();
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewById", sqlConnection);
+                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@MemberID", Convert.ToInt32(mCurrentRow.Cells[4].Value));
+                    DataSet mDataSet = new DataSet();
+                    sqlDataAdapter.Fill(mDataSet);
+                    DataRow mDataRow = mDataSet.Tables[0].Rows[0];
+                    FillFormDataFromTable(mDataRow);
+                    tbcMembers.SelectTab("tbpForm");
+                    EnableUpdateButtons();
+                }
+
+            }
+        }
+
+        
     }
 }
