@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbcMembers = new System.Windows.Forms.TabControl();
             this.tbpForm = new System.Windows.Forms.TabPage();
             this.pnlForm = new System.Windows.Forms.Panel();
@@ -158,6 +158,8 @@
             this.pnlMailingControl = new System.Windows.Forms.Panel();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.btnActive = new System.Windows.Forms.Button();
+            this.btnAllEmails = new System.Windows.Forms.Button();
             this.tbcMembers.SuspendLayout();
             this.tbpForm.SuspendLayout();
             this.pnlForm.SuspendLayout();
@@ -187,7 +189,7 @@
             this.tbcMembers.Location = new System.Drawing.Point(2, 3);
             this.tbcMembers.Name = "tbcMembers";
             this.tbcMembers.SelectedIndex = 0;
-            this.tbcMembers.Size = new System.Drawing.Size(1007, 458);
+            this.tbcMembers.Size = new System.Drawing.Size(1193, 458);
             this.tbcMembers.TabIndex = 0;
             this.tbcMembers.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbcMembers_MouseClick);
             // 
@@ -198,7 +200,7 @@
             this.tbpForm.Location = new System.Drawing.Point(4, 22);
             this.tbpForm.Name = "tbpForm";
             this.tbpForm.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpForm.Size = new System.Drawing.Size(999, 432);
+            this.tbpForm.Size = new System.Drawing.Size(1185, 432);
             this.tbpForm.TabIndex = 0;
             this.tbpForm.Text = "Podaci o članu";
             this.tbpForm.UseVisualStyleBackColor = true;
@@ -271,7 +273,7 @@
             this.pnlForm.Location = new System.Drawing.Point(3, 3);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlForm.Size = new System.Drawing.Size(993, 381);
+            this.pnlForm.Size = new System.Drawing.Size(1179, 381);
             this.pnlForm.TabIndex = 1;
             // 
             // dtpDatePaid
@@ -946,7 +948,7 @@
             this.gpbControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gpbControl.Location = new System.Drawing.Point(3, 384);
             this.gpbControl.Name = "gpbControl";
-            this.gpbControl.Size = new System.Drawing.Size(993, 45);
+            this.gpbControl.Size = new System.Drawing.Size(1179, 45);
             this.gpbControl.TabIndex = 0;
             this.gpbControl.TabStop = false;
             // 
@@ -954,7 +956,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(394, 13);
+            this.btnCancel.Location = new System.Drawing.Point(487, 13);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(105, 28);
             this.btnCancel.TabIndex = 4;
@@ -966,7 +968,7 @@
             // 
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(505, 13);
+            this.btnUpdate.Location = new System.Drawing.Point(598, 13);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(105, 28);
             this.btnUpdate.TabIndex = 3;
@@ -978,7 +980,7 @@
             // 
             this.btnShowTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShowTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowTable.Location = new System.Drawing.Point(881, 13);
+            this.btnShowTable.Location = new System.Drawing.Point(1067, 13);
             this.btnShowTable.Name = "btnShowTable";
             this.btnShowTable.Size = new System.Drawing.Size(105, 28);
             this.btnShowTable.TabIndex = 2;
@@ -990,7 +992,7 @@
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(616, 13);
+            this.btnDelete.Location = new System.Drawing.Point(709, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(105, 28);
             this.btnDelete.TabIndex = 1;
@@ -1002,7 +1004,7 @@
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(283, 13);
+            this.btnSave.Location = new System.Drawing.Point(376, 13);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(105, 28);
             this.btnSave.TabIndex = 0;
@@ -1020,7 +1022,7 @@
             this.tbpMembersTable.Location = new System.Drawing.Point(4, 22);
             this.tbpMembersTable.Name = "tbpMembersTable";
             this.tbpMembersTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMembersTable.Size = new System.Drawing.Size(999, 432);
+            this.tbpMembersTable.Size = new System.Drawing.Size(1185, 432);
             this.tbpMembersTable.TabIndex = 1;
             this.tbpMembersTable.Text = "Tablica Članova";
             this.tbpMembersTable.UseVisualStyleBackColor = true;
@@ -1065,7 +1067,7 @@
             this.dgvMembers.Location = new System.Drawing.Point(3, 39);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.ReadOnly = true;
-            this.dgvMembers.Size = new System.Drawing.Size(993, 336);
+            this.dgvMembers.Size = new System.Drawing.Size(1179, 336);
             this.dgvMembers.TabIndex = 0;
             this.dgvMembers.DoubleClick += new System.EventHandler(this.dgvMembers_DoubleClick);
             // 
@@ -1346,7 +1348,7 @@
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(3, 3);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(993, 36);
+            this.pnlSearch.Size = new System.Drawing.Size(1179, 36);
             this.pnlSearch.TabIndex = 4;
             // 
             // btnCancelSearch
@@ -1388,6 +1390,8 @@
             // pnlMembersTableControl
             // 
             this.pnlMembersTableControl.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlMembersTableControl.Controls.Add(this.btnAllEmails);
+            this.pnlMembersTableControl.Controls.Add(this.btnActive);
             this.pnlMembersTableControl.Controls.Add(this.btnAddNewMember);
             this.pnlMembersTableControl.Controls.Add(this.btnAboutToExpire);
             this.pnlMembersTableControl.Controls.Add(this.btnPermInactive);
@@ -1397,7 +1401,7 @@
             this.pnlMembersTableControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlMembersTableControl.Location = new System.Drawing.Point(3, 375);
             this.pnlMembersTableControl.Name = "pnlMembersTableControl";
-            this.pnlMembersTableControl.Size = new System.Drawing.Size(993, 54);
+            this.pnlMembersTableControl.Size = new System.Drawing.Size(1179, 54);
             this.pnlMembersTableControl.TabIndex = 2;
             // 
             // btnAddNewMember
@@ -1416,7 +1420,7 @@
             // 
             this.btnAboutToExpire.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAboutToExpire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAboutToExpire.Location = new System.Drawing.Point(473, 0);
+            this.btnAboutToExpire.Location = new System.Drawing.Point(659, 0);
             this.btnAboutToExpire.Name = "btnAboutToExpire";
             this.btnAboutToExpire.Size = new System.Drawing.Size(130, 54);
             this.btnAboutToExpire.TabIndex = 4;
@@ -1428,7 +1432,7 @@
             // 
             this.btnPermInactive.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnPermInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPermInactive.Location = new System.Drawing.Point(603, 0);
+            this.btnPermInactive.Location = new System.Drawing.Point(789, 0);
             this.btnPermInactive.Name = "btnPermInactive";
             this.btnPermInactive.Size = new System.Drawing.Size(130, 54);
             this.btnPermInactive.TabIndex = 3;
@@ -1440,7 +1444,7 @@
             // 
             this.btnInactive.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnInactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInactive.Location = new System.Drawing.Point(733, 0);
+            this.btnInactive.Location = new System.Drawing.Point(919, 0);
             this.btnInactive.Name = "btnInactive";
             this.btnInactive.Size = new System.Drawing.Size(130, 54);
             this.btnInactive.TabIndex = 2;
@@ -1452,7 +1456,7 @@
             // 
             this.btnExpired.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExpired.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpired.Location = new System.Drawing.Point(863, 0);
+            this.btnExpired.Location = new System.Drawing.Point(1049, 0);
             this.btnExpired.Name = "btnExpired";
             this.btnExpired.Size = new System.Drawing.Size(130, 54);
             this.btnExpired.TabIndex = 1;
@@ -1465,7 +1469,7 @@
             this.lblMembersWho.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMembersWho.AutoSize = true;
             this.lblMembersWho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembersWho.Location = new System.Drawing.Point(218, 12);
+            this.lblMembersWho.Location = new System.Drawing.Point(274, 12);
             this.lblMembersWho.Name = "lblMembersWho";
             this.lblMembersWho.Size = new System.Drawing.Size(249, 25);
             this.lblMembersWho.TabIndex = 5;
@@ -1477,7 +1481,7 @@
             this.pnlMembersTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMembersTable.Location = new System.Drawing.Point(3, 3);
             this.pnlMembersTable.Name = "pnlMembersTable";
-            this.pnlMembersTable.Size = new System.Drawing.Size(993, 426);
+            this.pnlMembersTable.Size = new System.Drawing.Size(1179, 426);
             this.pnlMembersTable.TabIndex = 3;
             // 
             // tbpMailingList
@@ -1508,14 +1512,14 @@
             this.dgvMailingList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMailingList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvMailingList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMailingList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMailingList.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMailingList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMailingList.Location = new System.Drawing.Point(0, 0);
             this.dgvMailingList.Name = "dgvMailingList";
@@ -1570,11 +1574,35 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // btnActive
+            // 
+            this.btnActive.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActive.Location = new System.Drawing.Point(529, 0);
+            this.btnActive.Name = "btnActive";
+            this.btnActive.Size = new System.Drawing.Size(130, 54);
+            this.btnActive.TabIndex = 6;
+            this.btnActive.Text = "Aktivna";
+            this.btnActive.UseVisualStyleBackColor = true;
+            this.btnActive.Click += new System.EventHandler(this.btnActive_Click);
+            // 
+            // btnAllEmails
+            // 
+            this.btnAllEmails.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAllEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllEmails.Location = new System.Drawing.Point(105, 0);
+            this.btnAllEmails.Name = "btnAllEmails";
+            this.btnAllEmails.Size = new System.Drawing.Size(105, 54);
+            this.btnAllEmails.TabIndex = 7;
+            this.btnAllEmails.Text = "Svi Emailovi";
+            this.btnAllEmails.UseVisualStyleBackColor = true;
+            this.btnAllEmails.Click += new System.EventHandler(this.btnAllEmails_Click);
+            // 
             // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 463);
+            this.ClientSize = new System.Drawing.Size(1193, 463);
             this.Controls.Add(this.tbcMembers);
             this.Name = "FormMembers";
             this.Text = "Tablica Članova";
@@ -1737,6 +1765,8 @@
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnCancelSearch;
+        private System.Windows.Forms.Button btnAllEmails;
+        private System.Windows.Forms.Button btnActive;
     }
 }
 

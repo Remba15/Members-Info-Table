@@ -38,7 +38,7 @@ namespace OGI_HR_Clanovi
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Jeste li sigurni da želite obrisati podatke člana? (OPREZ! Podaci se ne povratno brišu!)",
-                "Obavijest", MessageBoxButtons.YesNo);
+                "Obavijest", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.Yes) {
                 using (SqlConnection sqlConnection = new SqlConnection(strConnectionString))
                 {
@@ -49,7 +49,7 @@ namespace OGI_HR_Clanovi
                     sqlCommand.ExecuteScalar();
                 }
                 ClearForm();
-                MessageBox.Show("Podaci uspješno obrisani!", "Obavijest");
+                MessageBox.Show("Podaci uspješno obrisani!", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbcMembers.SelectTab("tbpMembersTable");
                 FillDataGridView();
             }
@@ -493,7 +493,14 @@ namespace OGI_HR_Clanovi
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(rtbMailingList.Text);
+            try
+            {
+                Clipboard.SetText(rtbMailingList.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Nije moguće kopirati praznu listu!", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -554,6 +561,44 @@ namespace OGI_HR_Clanovi
             }
         }
 
-        
+        private void btnAllEmails_Click(object sender, EventArgs e)
+        {
+            using(SqlConnection sqlConnection = new SqlConnection(strConnectionString))
+            { 
+                sqlConnection.Open();
+                using(SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewAllEmails", sqlConnection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    
+                    dgvMailingList.DataSource = dataTable;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
+
+        private void btnActive_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(strConnectionString))
+            {
+                sqlConnection.Open();
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("MembersViewActive", sqlConnection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+
+                    dgvMailingList.DataSource = dataTable;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        rtbMailingList.AppendText(row[3].ToString() + ", ");
+                    }
+                }
+            }
+            tbcMembers.SelectTab("tbpMailingList");
+        }
     }
 }
