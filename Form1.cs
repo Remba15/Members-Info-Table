@@ -322,6 +322,7 @@ namespace OGI_HR_Clanovi
                     }
                 }
             }
+            tbcMembers.SelectTab("tbpMembersTable");
         }
 
         #endregion
