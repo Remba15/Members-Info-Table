@@ -23,6 +23,7 @@ namespace OGI_HR_Clanovi
     {
         private DataTable membersDataTable = new DataTable();
         private string strConnectionString = ConfigurationManager.ConnectionStrings["membersDatabase"].ConnectionString;
+        private string imageFilePath = ConfigurationManager.AppSettings["imagePath"].ToString();
 
         public FormMembers()
         {
@@ -57,10 +58,7 @@ namespace OGI_HR_Clanovi
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@MemberID", Convert.ToInt32(tbxMemberNumber.Text.Trim()));
                     sqlCommand.ExecuteNonQuery();
-                    sqlCommand = new SqlCommand("DeleteImage", sqlConnection);
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@MemberID", Convert.ToInt32(tbxMemberNumber.Text.Trim()));
-                    sqlCommand.ExecuteNonQuery();
+                    DeleteImage();
                 }
                 ClearForm();
                 MessageBox.Show("Podaci uspješno obrisani!", "Obavijest", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -72,7 +70,7 @@ namespace OGI_HR_Clanovi
 
             }
         }
-
+        
         private void rbtnOrganizationYes_CheckedChanged(object sender, EventArgs e)
         {
             rtbxListOrganizations.Visible = true;
@@ -103,16 +101,6 @@ namespace OGI_HR_Clanovi
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(strConnectionString))
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand("DeleteImage", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MemberID", Convert.ToInt32(tbxMemberNumber.Text));
-                    command.ExecuteNonQuery();
-                }
-            }
             ClearForm();
             tbcMembers.SelectTab("tbpMembersTable");
             EnableAllFormButtons();
@@ -305,7 +293,6 @@ namespace OGI_HR_Clanovi
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pbxMemberImage.Image = Image.FromFile(openFileDialog.FileName);
-                    openFileDialog.Dispose();
                 }
             }
             
@@ -315,15 +302,16 @@ namespace OGI_HR_Clanovi
         {
             if (ImageValidation())
             {
+                string filePath = imageFilePath + "\\" + tbxName.Text + " " + tbxSurname.Text + ".jpg";
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    saveFileDialog.Filter = "JPEG Image|*.jpg|*.png|";
+                    saveFileDialog.Filter = "JPEG (*.jpg)|*.jpg";
                     saveFileDialog.FileName = tbxMemberNumber.Text.ToString() + "_" + tbxName.Text.ToLower() + "_" + tbxSurname.Text.ToLower() + "_" + dtpDatePaid.Value.ToString("MM-yyyy");
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         try
                         {
-                            Image image = pbxMemberImage.Image;
+                            Image image = GetImageCopy(filePath);
                             image.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
                             MessageBox.Show("Slika uspješno izvezena!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -398,7 +386,15 @@ namespace OGI_HR_Clanovi
                 _isValid = false;
             }
 
-            _isValid = ImageValidation();
+            Image currentImage = pbxMemberImage.Image;
+            Image resourceImage = Properties.Resources.placeholder;
+            byte[] currentImageData = ImageToByteArray(currentImage);
+            byte[] resourceImageData = ImageToByteArray(resourceImage);
+            if (ByteArraysEqual(currentImageData, resourceImageData))
+            {
+                MessageBox.Show("Potrebno je postaviti sliku člana!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _isValid = false;
+            }
 
             return _isValid;
         }
@@ -409,12 +405,15 @@ namespace OGI_HR_Clanovi
             Image resourceImage = Properties.Resources.placeholder;
             byte[] currentImageData = ImageToByteArray(currentImage);
             byte[] resourceImageData = ImageToByteArray(resourceImage);
+            currentImage.Dispose();
+            resourceImage.Dispose();
             if (ByteArraysEqual(currentImageData, resourceImageData))
             {
                 MessageBox.Show("Potrebno je postaviti sliku člana!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else return true;
+            
         }
 
         private byte[] ImageToByteArray(Image image)
@@ -424,76 +423,68 @@ namespace OGI_HR_Clanovi
                 try { image.Save(ms, ImageFormat.Jpeg); }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"{ex.Message}", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Došlo je do pogreške{ex.Message}", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                return ms.ToArray();
+                return ms.ToArray(); 
             }
         }
 
         private void SaveImage()
         {
-            if (pbxMemberImage.Image == null || pbxMemberImage.Image == Properties.Resources.placeholder)
+            string filePath = imageFilePath + "\\" + tbxName.Text + " " + tbxSurname.Text + ".jpg";
+            try
             {
-                MessageBox.Show("Odaberite sliku!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                pbxMemberImage.Image.Save(filePath, ImageFormat.Jpeg);
             }
-
-            byte[] imageData;
-            using (MemoryStream ms = new MemoryStream())
+            catch (Exception ex)
             {
-                pbxMemberImage.Image.Save(ms, pbxMemberImage.Image.RawFormat);
-                imageData = ms.ToArray();
-            }
-
-            using (SqlConnection connection = new SqlConnection(strConnectionString))
-            {
-                using (SqlCommand command = new SqlCommand("InsertImage", connection))
-                {
-                    try
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@MemberID", Convert.ToInt32(tbxMemberNumber.Text));
-                        command.Parameters.AddWithValue("@ImageData", imageData);
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        MessageBox.Show($"{rowsAffected} slika uspješno spremljena!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Došlo je do pogreške: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                MessageBox.Show($"Dogodila se pogreška prilikom spremanja slike: {ex.Message}", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void UpdateImage()
         {
-            byte[] imageData;
-            using (MemoryStream ms = new MemoryStream())
-            {
-                pbxMemberImage.Image.Save(ms, pbxMemberImage.Image.RawFormat);
-                imageData = ms.ToArray();
-            }
+            DeleteImage();
+            SaveImage();
+        }
 
-            using (SqlConnection connection = new SqlConnection(strConnectionString))
+        private void RetrieveImage()
+        {
+            string filePath = imageFilePath + "\\" + tbxName.Text + " " + tbxSurname.Text + ".jpg";
+            try
             {
-                using (SqlCommand command = new SqlCommand("UpdateImage", connection))
+                if (File.Exists(filePath))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MemberID", Convert.ToInt32(tbxMemberNumber.Text));
-                    command.Parameters.AddWithValue("@ImageData", imageData);
-
-                    try
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        MessageBox.Show($"{rowsAffected} slika uspješno spremljena!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Došlo je do pogreške: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    pbxMemberImage.Image.Dispose();
+                    pbxMemberImage.Image = GetImageCopy(filePath);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Dogodila se pogreška prilikom dohvata slike: {ex.Message}", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteImage()
+        {
+            string filePath = imageFilePath + "\\" + tbxName.Text + " " + tbxSurname.Text + ".jpg";
+            try
+            {
+                File.Delete(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Dogodila se pogreška prilikom brisanja slike: {ex.Message}", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private Image GetImageCopy(string imagePath)
+        {
+            using(Image image = Image.FromFile(imagePath))
+            {
+                Bitmap bitmap = new Bitmap(image);
+                return bitmap;
             }
         }
 
@@ -578,88 +569,59 @@ namespace OGI_HR_Clanovi
             }
         }
 
-        private void FillFormDataFromTable(DataRow mDataRow)
+        private void FillFormDataFromTable(DataRow dataRow)
         {
-            tbxName.Text = mDataRow["Name"].ToString();
-            tbxSurname.Text = mDataRow["Surname"].ToString();
-            cbxGender.Text = mDataRow["Gender"].ToString();
-            tbxMemberNumber.Text = mDataRow["MemberID"].ToString();
-            dtpDOB.Value = Convert.ToDateTime(mDataRow["DOB"]);
-            tbxPOB.Text = mDataRow["POB"].ToString();
-            tbxNationality.Text = mDataRow["Nationality"].ToString();
-            tbxPersonalNumber.Text = mDataRow["PersonalNumber"].ToString();
-            tbxDocumentID.Text = mDataRow["DocumentIDNumber"].ToString();
-            tbxAddressOfResidence.Text = mDataRow["AddressOfResidence"].ToString();
-            tbxMailAddress.Text = mDataRow["MailAddress"].ToString();
-            tbxPhoneNumber.Text = mDataRow["PhoneNumber"].ToString();
-            tbxEMail.Text = mDataRow["EMail"].ToString();
-            tbxWebPage.Text = mDataRow["WebPage"].ToString();
-            tbxProfession.Text = mDataRow["Profession"].ToString();
-            tbxMusicProfession.Text = mDataRow["MusicProfession"].ToString();
-            if (mDataRow["MusicActivityType"].ToString() == "Primarna djelatnost")
+            tbxName.Text = dataRow["Name"].ToString();
+            tbxSurname.Text = dataRow["Surname"].ToString();
+            cbxGender.Text = dataRow["Gender"].ToString();
+            tbxMemberNumber.Text = dataRow["MemberID"].ToString();
+            dtpDOB.Value = Convert.ToDateTime(dataRow["DOB"]);
+            tbxPOB.Text = dataRow["POB"].ToString();
+            tbxNationality.Text = dataRow["Nationality"].ToString();
+            tbxPersonalNumber.Text = dataRow["PersonalNumber"].ToString();
+            tbxDocumentID.Text = dataRow["DocumentIDNumber"].ToString();
+            tbxAddressOfResidence.Text = dataRow["AddressOfResidence"].ToString();
+            tbxMailAddress.Text = dataRow["MailAddress"].ToString();
+            tbxPhoneNumber.Text = dataRow["PhoneNumber"].ToString();
+            tbxEMail.Text = dataRow["EMail"].ToString();
+            tbxWebPage.Text = dataRow["WebPage"].ToString();
+            tbxProfession.Text = dataRow["Profession"].ToString();
+            tbxMusicProfession.Text = dataRow["MusicProfession"].ToString();
+            if (dataRow["MusicActivityType"].ToString() == "Primarna djelatnost")
             {
                 rbtnPrimary.Checked = true;
             }
             else rbtnSecondary.Checked = true;
-            tbxBasicSpecialty.Text = mDataRow["BasicSpecialty"].ToString();
-            tbxAdditionalSpecialty.Text = mDataRow["AdditionalSpecialty"].ToString();
-            tbxBandName.Text = mDataRow["BandName"].ToString();
-            tbxStageName.Text = mDataRow["StageName"].ToString();
-            tbxManager.Text = mDataRow["ManagerName"].ToString();
-            tbxPublisher.Text = mDataRow["Publisher"].ToString();
-            if (mDataRow["MemberOfOtherOrganizations"].ToString() == "Da")
+            tbxBasicSpecialty.Text = dataRow["BasicSpecialty"].ToString();
+            tbxAdditionalSpecialty.Text = dataRow["AdditionalSpecialty"].ToString();
+            tbxBandName.Text = dataRow["BandName"].ToString();
+            tbxStageName.Text = dataRow["StageName"].ToString();
+            tbxManager.Text = dataRow["ManagerName"].ToString();
+            tbxPublisher.Text = dataRow["Publisher"].ToString();
+            if (dataRow["MemberOfOtherOrganizations"].ToString() == "Da")
             {
                 rbtnOrganizationYes.Checked = true;
             }
             else rbtnOrganizationNo.Checked = true;
-            rtbxListOrganizations.Text = mDataRow["OtherOrganizations"].ToString();
-            if (mDataRow["OwnEquipment"].ToString() == "Da")
+            rtbxListOrganizations.Text = dataRow["OtherOrganizations"].ToString();
+            if (dataRow["OwnEquipment"].ToString() == "Da")
             {
                 rbtnEquipmentYes.Checked = true;
             }
             else rbtnEquipmentNo.Checked = true;
-            tbxMusicCategory.Text = mDataRow["MusicCategory"].ToString();
-            rtbxBiography.Text = mDataRow["Biography"].ToString();
-            if (mDataRow["MembershipType"].ToString() == "Aktivno")
+            tbxMusicCategory.Text = dataRow["MusicCategory"].ToString();
+            rtbxBiography.Text = dataRow["Biography"].ToString();
+            if (dataRow["MembershipType"].ToString() == "Aktivno")
             {
                 rbtnActive.Checked = true;
             }
-            else if (mDataRow["MembershipType"].ToString() == "Pocasno")
+            else if (dataRow["MembershipType"].ToString() == "Pocasno")
             {
                 rbtnHonorary.Checked = true;
             }
             else rbtnJoined.Checked = true;
-            dtpDatePaid.Value = Convert.ToDateTime(mDataRow["DatePaid"]);
-
-            #region Image Retrieve
-            using (SqlConnection connection = new SqlConnection(strConnectionString))
-            {
-                using (SqlCommand command = new SqlCommand("RetrieveImage", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MemberID", mDataRow["MemberID"]);
-                    try
-                    {
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-                        if(reader.Read())
-                        {
-                            byte[] imageData = (byte[])reader["ImageData"];
-                            using(MemoryStream ms = new MemoryStream(imageData))
-                            {
-                                pbxMemberImage.Image = Image.FromStream(ms);
-                            }
-                        }
-                        reader.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Dogodila se greška prilikom dohvata slike: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            #endregion
-
+            dtpDatePaid.Value = Convert.ToDateTime(dataRow["DatePaid"]);
+            RetrieveImage();
         }
 
         private void EnableAllFormButtons()
@@ -795,6 +757,7 @@ namespace OGI_HR_Clanovi
 
         private void dgvMailingList_DoubleClick(object sender, EventArgs e)
         {
+            rtbMailingList.Text = String.Empty;
             if (dgvMembers.CurrentRow.Index != -1) //da se ne moze kliknit header red
             {
                 DataGridViewRow mCurrentRow = dgvMailingList.CurrentRow;
@@ -830,8 +793,8 @@ namespace OGI_HR_Clanovi
 
 
 
+
         #endregion
 
-        
     }
 }
